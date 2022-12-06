@@ -1372,6 +1372,7 @@ double ConvertBitsToDouble(unsigned int nBits)
 int64_t GetBlockValue(int nHeight)
 {
     const int nHalvingPeriod = 2102400;
+    const int nHalvingExtender = 4204800;
 
     if (nHeight <= Params().GetConsensus().height_supply_reduction) {
         // Old subsidy
@@ -1404,8 +1405,7 @@ int64_t GetBlockValue(int nHeight)
     // Need to decrement by 1 to pass correct nsubsity on
     // our halving blocks
     nHeight--;
-
-    nSubsidy >>= ((nHeight - 1) / nHalvingPeriod);
+    nSubsidy >>= ((nHeight - 1) / nHalvingExtender);
 
     return nSubsidy;
 }
