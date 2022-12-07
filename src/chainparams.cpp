@@ -199,10 +199,10 @@ public:
         consensus.nTimeSlotLength = 15;
 
         // spork keys
-        consensus.strSporkPubKey = "02f8759d6b73bd870ef27863378f275d273580e1f4d9448f441aa879bb352eb183";
+        consensus.strSporkPubKey = "030e2385abb6ee4a2991e90993f8e6a60510ec19f8bb4821ea5b2cfdea772594c2";
         consensus.strSporkPubKeyOld = "02f8759d6b73bd870ef27863378f275d273580e1f4d9448f441aa879bb352eb183";
-        consensus.nTime_EnforceNewSporkKey = 1592827200;    //!> Monday, 22 June 2020 12:00:00 PM GMT
-        consensus.nTime_RejectOldSporkKey = 1593000000;     //!> Wednesday, 24 June 2020 12:00:00 PM GMT
+        consensus.nTime_EnforceNewSporkKey = 1670376077; //!> Wed Dec 07 2022 01:21:17 GMT+0000
+        consensus.nTime_RejectOldSporkKey = 1670566877;  //!> Fri Dec 09 2022 06:21:17 GMT+0000
 
         // height-based activations
         consensus.height_last_PoW = 200;
