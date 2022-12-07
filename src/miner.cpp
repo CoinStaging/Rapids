@@ -593,8 +593,8 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
 
             // update fStakeableCoins (5 minute check time);
             CheckForCoins(pwallet, 5, &availableCoins);
-                while ((g_connman && g_connman->GetNodeCount(CConnman::CONNECTIONS_ALL) == 0 && Params().MiningRequiresPeers()) || pwallet->IsLocked() || !fStakeableCoins) || masternodeSync.NotCompleted()) {
-                    MilliSleep(5000);
+            while ((g_connman && g_connman->GetNodeCount(CConnman::CONNECTIONS_ALL) == 0 && Params().MiningRequiresPeers()) || pwallet->IsLocked() || !fStakeableCoins || masternodeSync.NotCompleted()) {
+                MilliSleep(5000);
                     // Do a separate 1 minute check here to ensure fStakeableCoins is updated
                     if (!fStakeableCoins) CheckForCoins(pwallet, 1, &availableCoins);
                 }
