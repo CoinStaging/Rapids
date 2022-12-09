@@ -604,6 +604,7 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
                     MilliSleep(5000);
                     // Do a separate 1 minute check here to ensure fStakeableCoins is updated
                     if (!fStakeableCoins) CheckForCoins(pwallet, 1, &availableCoins);
+                }
             }
 
             //search our map of hashed blocks, see if bestblock has been hashed yet
