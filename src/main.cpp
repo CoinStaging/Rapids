@@ -1404,7 +1404,7 @@ int64_t GetBlockValue(int nHeight)
     int rewardReduction = nHeight / nHalvingPeriod;
 
     nSubsidy >>= rewardReduction;
-    if (nHeight > 1) return nSubsidy
+    if (nHeight > 1) return nSubsidy;
 }
 
 int64_t GetMasternodePayment(int nHeight, int64_t blockValue)
