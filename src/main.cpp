@@ -1401,13 +1401,10 @@ int64_t GetBlockValue(int nHeight)
 
     // New subsidy
     int64_t nSubsidy = 1.7835 * COIN;
-    
-    // Need to decrement by 1 to pass correct nsubsity on
-    // our halving blocks
-    nHeight--;
-    nSubsidy >>= ((nHeight - 1) / nHalvingExtender);
+    int rewardReduction = nHeight / nHalvingPeriod;
 
-    return nSubsidy;
+    nSubsidy >>= rewardReduction;
+    if (nHeight > 1) return nSubsidy
 }
 
 int64_t GetMasternodePayment(int nHeight, int64_t blockValue)
